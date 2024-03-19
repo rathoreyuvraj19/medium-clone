@@ -5,6 +5,7 @@ import Signin from "./pages/Signin.tsx";
 import Signup from "./pages/Signup.tsx";
 import Blogs from "./pages/Blogs.tsx";
 import Blog from "./pages/Blog.tsx";
+import Publish from "./pages/Publish.tsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
           <Route path="/signup" element={<Signup></Signup>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
           <Route path="/blog/:id" element={<Blog></Blog>}></Route>
+          <Route path="/publish" element={<Publish></Publish>}></Route>
         </Routes>
       </BrowserRouter>
     </>

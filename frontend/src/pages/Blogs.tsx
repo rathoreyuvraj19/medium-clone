@@ -4,6 +4,7 @@ import { BACKEND_URL } from "../config";
 import axios from "axios";
 import AppBar from "../components/AppBar";
 import { useNavigate } from "react-router-dom";
+import Skeleton from "../components/Skeleton";
 
 const Blogs = () => {
   interface Blog {
@@ -41,7 +42,13 @@ const Blogs = () => {
   }, []);
   const navigate = useNavigate();
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex flex-col items-center justify-center">
+        <Skeleton></Skeleton>
+        <Skeleton></Skeleton>
+        <Skeleton></Skeleton>
+      </div>
+    );
   }
 
   function handleClick(
@@ -55,7 +62,7 @@ const Blogs = () => {
     <div>
       <AppBar></AppBar>
       <div className="p-4 flex justify-center">
-        <div className="flex flex-col justify-center max-w-xl">
+        <div className="flex flex-col justify-center max-w-5xl">
           {blogs.map((blog, key) => {
             return (
               <BlogCard

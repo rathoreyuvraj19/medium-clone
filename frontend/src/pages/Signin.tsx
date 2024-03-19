@@ -7,6 +7,7 @@ import { signInParam } from "@rathore.yuvraj19/common";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 import { useNavigate } from "react-router-dom";
+import AppBar from "../components/AppBar";
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -36,35 +37,38 @@ const Signin = () => {
   }
 
   return (
-    <div className="grid grid-flow-col grid-cols-1 lg:grid-cols-2 min-w-[min-content]">
-      <div className="w-full h-screen flex flex-col justify-center items-center min-w-fit">
-        <div className="flex flex-col h-fit w-3/5">
-          <Signcard
-            title={"Sign In to your account"}
-            subtitle={"Don't have an account?"}
-            link={"Sign Up"}
-            jumpto={"signup"}
-          />
-          <Input
-            id={"email"}
-            title={"Email"}
-            subtitle={"xyz@example.com"}
-            onChange={onChange}
-          />
-          <Input
-            id={"password"}
-            title={"Password"}
-            subtitle={"**********"}
-            type={"password"}
-            onChange={onChange}
-          />
-          <Button title={"Sign In"} onSubmit={onSubmit} />
+    <>
+      <AppBar></AppBar>
+      <div className="grid grid-flow-col grid-cols-1 lg:grid-cols-2 min-w-[min-content]">
+        <div className="w-full h-screen flex flex-col justify-center items-center min-w-fit">
+          <div className="flex flex-col h-fit w-3/5">
+            <Signcard
+              title={"Sign In to your account"}
+              subtitle={"Don't have an account?"}
+              link={"Sign Up"}
+              jumpto={"signup"}
+            />
+            <Input
+              id={"email"}
+              title={"Email"}
+              subtitle={"xyz@example.com"}
+              onChange={onChange}
+            />
+            <Input
+              id={"password"}
+              title={"Password"}
+              subtitle={"**********"}
+              type={"password"}
+              onChange={onChange}
+            />
+            <Button title={"Sign In"} onSubmit={onSubmit} />
+          </div>
+        </div>
+        <div className="hidden lg:block">
+          <Quote />
         </div>
       </div>
-      <div className="hidden lg:block">
-        <Quote />
-      </div>
-    </div>
+    </>
   );
 };
 
