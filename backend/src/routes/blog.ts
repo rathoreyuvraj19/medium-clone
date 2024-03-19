@@ -106,6 +106,13 @@ blogRouter.get("get/:id", async (c) => {
       where: {
         id: id,
       },
+      include: {
+        author: {
+          select: {
+            name: true,
+          },
+        },
+      },
     });
     if (!response) {
       c.status(404);
@@ -125,7 +132,11 @@ blogRouter.get("/bulk", async (c) => {
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
   try {
-    const response = await prisma.post.findMany();
+    const response = await prisma.post.findMany({
+      include: {
+        author: true, // Include all fields of the author
+      },
+    });
     return c.json({ response });
   } catch (error) {
     console.log(error);
