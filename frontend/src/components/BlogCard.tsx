@@ -1,4 +1,3 @@
-import React from "react";
 import Avatar from "./Avatar";
 
 interface BlogCardProps {
@@ -7,10 +6,7 @@ interface BlogCardProps {
   content: string;
   id: string;
   publishedDate: string;
-  onClick: (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    id: string
-  ) => void; // Include id for reference
+  onClick: (id: string) => void; // Include id for reference
 }
 
 const BlogCard = ({
@@ -21,8 +17,8 @@ const BlogCard = ({
   id,
   onClick,
 }: BlogCardProps) => {
-  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    onClick(e, id); // Pass id along with the event
+  const handleClick = () => {
+    onClick(id); // Pass id along with the event
   };
 
   return (

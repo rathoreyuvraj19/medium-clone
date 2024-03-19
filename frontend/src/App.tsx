@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Signin from "./pages/Signin.tsx";
@@ -8,8 +7,6 @@ import Blog from "./pages/Blog.tsx";
 import Publish from "./pages/Publish.tsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <BrowserRouter>

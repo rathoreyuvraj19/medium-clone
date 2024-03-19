@@ -1,5 +1,3 @@
-import React from "react";
-
 const Avatar = ({ name }: { name: string | undefined }) => {
   if (!name) return null; // Ensure name is defined before processing
 

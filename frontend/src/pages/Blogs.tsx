@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import BlogCard from "../components/BlogCard";
 import { BACKEND_URL } from "../config";
 import axios from "axios";
@@ -51,10 +51,7 @@ const Blogs = () => {
     );
   }
 
-  function handleClick(
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    id: string
-  ) {
+  function handleClick(id: string) {
     console.log(id);
     navigate(`/blog/${id}`);
   }

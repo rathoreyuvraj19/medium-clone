@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface HeadingProps {
   title: string;
@@ -9,11 +9,6 @@ interface HeadingProps {
 }
 
 const Heading: React.FC<HeadingProps> = ({ title, subtitle, link, jumpto }) => {
-  // const navigate = useNavigate();
-  // // function handleClick() {
-  // //   console.log("hello");
-  // //   navigate(`/${jumpto}`);
-  // // }
   return (
     <div className="flex flex-col items-center">
       <div className="font-bold text-3xl text-nowrap ">{title}</div>
